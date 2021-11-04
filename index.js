@@ -308,9 +308,13 @@ function getRandomFlavors(array1, array2, array3, array4){
   const array = [...array1, ...array2, ...array3, ...array4]
   console.log(array);
   const newArray = [];
-  for(let i = 0; i < 31; i++ ) {
-    let random = Math.round(Math.random() * (array1.length + array2.length + array3.length + array4.length + 1))
+  for(let i = 0; newArray.length < 31; i++ ) {
+    let random = Math.round(Math.random() * (array.length -1))
+    console.log(random);
+    console.log(array[random]);
+    console.log(array.length);
     newArray.push(array[random]);
+    array.splice(random, 1);
   }
   console.log(newArray.length)
   return newArray;
